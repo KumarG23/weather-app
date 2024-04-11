@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//declarations
 const APIKey = "da140f769044871b7d5db8ca57226465";
 const weatherForm = document.querySelector(".weatherForm");
 const zipInput = document.querySelector(".zipInput");
@@ -9,6 +10,7 @@ let temperature = document.querySelector(".temperature");
 let condition = document.querySelector(".condition");
 let other = document.querySelector(".other");
 
+//weather form
 weatherForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -27,6 +29,7 @@ weatherForm.addEventListener("submit", async (event) => {
   }
 });
 
+//get data with api
 async function getWeatherData(zip) {
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${APIKey}`;
 
@@ -39,14 +42,17 @@ async function getWeatherData(zip) {
   return await response.json();
 }
 
+
+//display data
 function displayWeatherInfo(data) {
   console.log(data);
   const {
-    name: city,
+    name: city, //what we are fetching from api arrays
     main: {temp},
     weather: [{ description, id, icon}],
   } = data;
 
+//text content / displays n/a
   card.textContent = "";
   card.style.display = "";
   temperature.textContent = "";
@@ -56,7 +62,7 @@ function displayWeatherInfo(data) {
   other.textContent = "";
   other.style.display = "";
 
-
+// create elements
   let cityDisplay = document.createElement("p");
   let tempDisplay = document.createElement("p");
   let tempFarDisplay = document.createElement("p");
@@ -65,6 +71,7 @@ function displayWeatherInfo(data) {
   let descDisplay = document.createElement("p");
   let weatherEmoji = document.createElement("img");
   
+  // give the created elements data
   cityDisplay.textContent = city;
   tempDisplay.textContent = `${temp} K`;
   tempFarDisplay.textContent = `${(((temp - 273.15) * 9) / 5 + 32).toFixed(1)}°F`;
@@ -75,6 +82,8 @@ function displayWeatherInfo(data) {
 //   weatherEmoji.src=`https://openweathermap.org/img/wn/${icon}`
   weatherEmoji.src=`https://openweathermap.org/img/wn/${icon}@2x.png`
   
+
+  //give created elements a class for styling
   cityDisplay.classList.add("cityDisplay");
   tempDisplay.classList.add("tempDisplay");
   tempFarDisplay.classList.add("tempFarDisplay");
@@ -83,6 +92,8 @@ function displayWeatherInfo(data) {
   descDisplay.classList.add("descDisplay");
   weatherEmoji.classList.add("weatherEmoji");
 
+
+  //append created elements to parent
   card.appendChild(cityDisplay, "p");
   temperature.appendChild(tempDisplay, "p");
   temperature.appendChild(tempFarDisplay, "p");
@@ -124,6 +135,7 @@ function displayWeatherInfo(data) {
 //   }
 // }
 
+//error display
 function displayError(message) {
   const errorDisplay = document.createElement("p");
   errorDisplay.textContent = message;
