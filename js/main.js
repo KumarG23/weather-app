@@ -3,8 +3,11 @@ import axios from "axios";
 const APIKey = "da140f769044871b7d5db8ca57226465";
 const weatherForm = document.querySelector(".weatherForm");
 const zipInput = document.querySelector(".zipInput");
-const card = document.querySelector(".card");
+let card = document.querySelector(".card");
 const country = "us";
+let temperature = document.querySelector(".temperature");
+let condition = document.querySelector(".condition");
+let other = document.querySelector(".other");
 
 weatherForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -40,26 +43,33 @@ function displayWeatherInfo(data) {
   console.log(data);
   const {
     name: city,
-    main: { temp, humidity },
+    main: {temp},
     weather: [{ description, id, icon}],
   } = data;
 
   card.textContent = "";
-  card.style.display = "flex";
+  card.style.display = "";
+  temperature.textContent = "";
+  temperature.style.display = "";
+  condition.textContent = "";
+  condition.style.display = "";
+  other.textContent = "";
+  other.style.display = "";
 
-  const cityDisplay = document.createElement("h1");
-  const tempDisplay = document.createElement("p");
-  const tempFarDisplay = document.createElement("p");
-  const tempCelDisplay = document.createElement("p");
-  const humidityDisplay = document.createElement("p");
-  const descDisplay = document.createElement("p");
-  const weatherEmoji = document.createElement("img");
+
+  let cityDisplay = document.createElement("p");
+  let tempDisplay = document.createElement("p");
+  let tempFarDisplay = document.createElement("p");
+  let tempCelDisplay = document.createElement("p");
+  //let humidityDisplay = document.createElement("p");
+  let descDisplay = document.createElement("p");
+  let weatherEmoji = document.createElement("img");
   
   cityDisplay.textContent = city;
-  tempDisplay.textContent = `${temp}`;
-  tempFarDisplay.textContent = `${(((temp - 273.15) * 9) / 5 + 32).toFixed(1)}`;
-  tempCelDisplay.textContent = `${temp - 273.15}`;
-  humidityDisplay.textContent = humidity;
+  tempDisplay.textContent = `${temp} K`;
+  tempFarDisplay.textContent = `${(((temp - 273.15) * 9) / 5 + 32).toFixed(1)}°F`;
+  tempCelDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
+  //humidityDisplay.textContent = `${humidity} Humidity`;
   descDisplay.textContent = description;
 //   weatherEmoji.textContent = getWeatherEmoji(id);
 //   weatherEmoji.src=`https://openweathermap.org/img/wn/${icon}`
@@ -69,18 +79,19 @@ function displayWeatherInfo(data) {
   tempDisplay.classList.add("tempDisplay");
   tempFarDisplay.classList.add("tempFarDisplay");
   tempCelDisplay.classList.add("tempCelDisplay");
-  humidityDisplay.classList.add("humidityDisplay");
+  //humidityDisplay.classList.add("humidityDisplay");
   descDisplay.classList.add("descDisplay");
   weatherEmoji.classList.add("weatherEmoji");
 
-  card.appendChild(cityDisplay);
-  card.appendChild(tempDisplay);
-  card.appendChild(tempFarDisplay);
-  card.appendChild(tempCelDisplay);
-  card.appendChild(humidityDisplay);
-  card.appendChild(descDisplay);
-  card.appendChild(weatherEmoji);
+  card.appendChild(cityDisplay, "p");
+  temperature.appendChild(tempDisplay, "p");
+  temperature.appendChild(tempFarDisplay, "p");
+  temperature.appendChild(tempCelDisplay, "p");
+  //condition.appendChild(humidityDisplay, "p");
+  condition.appendChild(descDisplay, "p");
+  other.appendChild(weatherEmoji, "p");
 }
+
 
 // async function getWeatherEmoji(weatherId) {
 //   weatherEmoji.src = `https://openweathermap.org/img/wn/${weatherId}`;

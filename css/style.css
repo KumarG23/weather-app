@@ -1,0 +1,170 @@
+body {
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    
+    
+
+}
+
+.weatherForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px;
+    
+}
+
+#btn {
+    background-color: #99d5ca;
+}
+
+h1 {
+    
+}
+
+p {
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    
+}
+
+.city {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #ffc374;
+    border: 2px solid black;
+    padding: 10px;
+
+}
+
+.temp1 {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: #ffc374;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 10px
+}
+
+.temperature {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    
+}
+
+.cond {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: #ffc374;
+    margin-top: 50px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.oth {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: #ffc374;
+    margin-top: 50px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.condition {
+    border: black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+
+
+.other {
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+.tempDisplay, .tempFarDisplay, .tempCelDisplay {
+    border: black;
+    border-radius: 1px;
+    font-weight: normal;
+    flex-direction: row;
+    margin-top: 5px;
+   
+}
+
+
+.cityDisplay {
+    font-weight: normal;
+    border: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    border: 1px solid black;
+}
+    
+
+.tempDisplay {
+  font-weight: normal;
+
+}
+
+.tempFarDisplay {
+    border-right: 2px solid black;
+    padding-right: 50px;
+    border-left: 2px solid black;
+    padding-left: 50px;
+
+}
+
+.tempCelDisplay {
+
+}
+
+/*.humidityDisplay, .descDisplay {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    padding: 15px;
+}
+*/
+
+.weatherEmoji {
+    width: 50%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
