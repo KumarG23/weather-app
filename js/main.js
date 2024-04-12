@@ -5,10 +5,17 @@ const APIKey = "da140f769044871b7d5db8ca57226465";
 const weatherForm = document.querySelector(".weatherForm");
 const zipInput = document.querySelector(".zipInput");
 let card = document.querySelector(".card");
-const country = "us";
+let country = "us";
 let temperature = document.querySelector(".temperature");
 let condition = document.querySelector(".condition");
 let other = document.querySelector(".other");
+let cityContainer = document.getElementById("cityContainer");
+let tempContainer = document.getElementById("tempContainer");
+let condContainer = document.getElementById("condContainer");
+let otherContainer = document.getElementById("otherContainer");
+
+
+
 
 //weather form
 weatherForm.addEventListener("submit", async (event) => {
@@ -29,6 +36,8 @@ weatherForm.addEventListener("submit", async (event) => {
   }
 });
 
+
+
 //get data with api
 async function getWeatherData(zip) {
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${APIKey}`;
@@ -41,8 +50,9 @@ async function getWeatherData(zip) {
 
   return await response.json();
 }
-
-
+let cityLabel;
+let tempLabel;
+let condLabel;
 //display data
 function displayWeatherInfo(data) {
   console.log(data);
@@ -53,17 +63,19 @@ function displayWeatherInfo(data) {
   } = data;
 
 //text content / displays n/a
-  card.textContent = "";
-  card.style.display = "";
-  temperature.textContent = "";
-  temperature.style.display = "";
-  condition.textContent = "";
-  condition.style.display = "";
-  other.textContent = "";
-  other.style.display = "";
+  //card.textContent = "City";
+  //card.style.display = "";
+  //temperature.textContent = "";
+  //tempLabel.textContent = "Temperature";
+  //temperature.style.display = "";
+  //condition.textContent = "Condition";
+  //condition.style.display = "";
+  //other.textContent = "Other Info";
+  //other.style.display = "";
 
 // create elements
   let cityDisplay = document.createElement("p");
+  //let tempLabel = document.createElement("p");
   let tempDisplay = document.createElement("p");
   let tempFarDisplay = document.createElement("p");
   let tempCelDisplay = document.createElement("p");
@@ -85,6 +97,7 @@ function displayWeatherInfo(data) {
 
   //give created elements a class for styling
   cityDisplay.classList.add("cityDisplay");
+  //tempLabel.classList.add("tempLabel");
   tempDisplay.classList.add("tempDisplay");
   tempFarDisplay.classList.add("tempFarDisplay");
   tempCelDisplay.classList.add("tempCelDisplay");
@@ -94,14 +107,35 @@ function displayWeatherInfo(data) {
 
 
   //append created elements to parent
-  card.appendChild(cityDisplay, "p");
-  temperature.appendChild(tempDisplay, "p");
-  temperature.appendChild(tempFarDisplay, "p");
-  temperature.appendChild(tempCelDisplay, "p");
+  cityLabel = document.createElement("p");
+  cityLabel.textContent = "City";
+  cityLabel.classList.add("cityLabel");
+  cityLabel.appendChild(card);
+  tempLabel = document.createElement("p");
+  tempLabel.textContent ="Temperature";
+  tempLabel.classList.add("tempLabel");
+  card.appendChild(cityDisplay);
+  //temperature.appendChild(tempLabel);
+  temperature.appendChild(tempDisplay);
+  temperature.appendChild(tempFarDisplay);
+  temperature.appendChild(tempCelDisplay);
   //condition.appendChild(humidityDisplay, "p");
-  condition.appendChild(descDisplay, "p");
-  other.appendChild(weatherEmoji, "p");
+  condLabel = document.createElement("p");
+  condLabel.textContent = "Condition";
+  condLabel.classList.add("condLabel");
+  condition.appendChild(descDisplay);
+  other.appendChild(weatherEmoji);
+
+  
+  cityContainer.appendChild(cityLabel);
+  cityContainer.appendChild(card);
+  tempContainer.appendChild(tempLabel);
+  tempContainer.appendChild(temperature);
+  condContainer.appendChild(condLabel);
+  condContainer.appendChild(condition);
+  otherContainer.appendChild(other);
 }
+
 
 
 // async function getWeatherEmoji(weatherId) {

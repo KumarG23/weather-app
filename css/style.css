@@ -1,18 +1,27 @@
 body {
+    max-width: 50vh;
+    margin: auto;
     background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px; */
+    /* padding-right: 50px; */
     align-items: center;
-    
-    
-
+   
 }
+
+.weatherApp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
 
 .weatherForm {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 5px;
+    padding-bottom: 20px;
     
 }
 
@@ -20,12 +29,36 @@ body {
     background-color: #99d5ca;
 }
 
-h1 {
+.mainContainer {
+    /* max-width: 70vh; */
+    border: 1px dashed black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
     
 }
 
-p {
+#tempContainer {
+    border: 1px solid black;
+    margin-top: 20px;
 }
+
+
+#cityContainer {
+   border: 1px solid black;
+}
+
+.cityLabel {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: #ffc374;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+
+
 
 .card {
     display: flex;
@@ -49,7 +82,7 @@ p {
 
 }
 
-.temp1 {
+/* .temp1 {
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -58,18 +91,30 @@ p {
     border: 2px solid black;
     padding: 10px
 }
+*/
 
+.tempLabel{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color: #ffc374;
+    margin-bottom: 0;
+    border: 2px solid black;
+    padding: 10px;
+    border: 1px solid black;
+}
 .temperature {
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
+    margin: 0;
+        
     
 }
 
-.cond {
+.condLabel {
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -113,11 +158,18 @@ p {
 
 
 .tempDisplay, .tempFarDisplay, .tempCelDisplay {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
     border: black;
-    border-radius: 1px;
+    border: 1px solid black;
     font-weight: normal;
-    flex-direction: row;
-    margin-top: 5px;
+    /* flex-direction: row; */
+    padding: 5px 10px;
+    margin: 0;
+
+    
+    
    
 }
 
@@ -141,11 +193,8 @@ p {
 
 }
 
-.tempFarDisplay {
-    border-right: 2px solid black;
-    padding-right: 50px;
-    border-left: 2px solid black;
-    padding-left: 50px;
+.tempFarDisplay { 
+    flex-grow: 20;
 
 }
 
