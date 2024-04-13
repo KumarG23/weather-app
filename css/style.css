@@ -219,3 +219,12 @@ body {
     align-items: center;
 }
 
+.errorDisplay {
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
