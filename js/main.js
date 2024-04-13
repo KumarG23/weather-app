@@ -53,6 +53,7 @@ async function getWeatherData(zip) {
 let cityLabel;
 let tempLabel;
 let condLabel;
+let otherLabel;
 //display data
 function displayWeatherInfo(data) {
   console.log(data);
@@ -124,6 +125,9 @@ function displayWeatherInfo(data) {
   condLabel.textContent = "Condition";
   condLabel.classList.add("condLabel");
   condition.appendChild(descDisplay);
+  otherLabel = document.createElement("p");
+  cityLabel.textContent = "Other Info";
+  otherLabel.classList.add("otherLabel");
   other.appendChild(weatherEmoji);
 
   

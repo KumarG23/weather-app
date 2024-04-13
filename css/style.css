@@ -48,6 +48,12 @@ body {
    border: 1px solid black;
 }
 
+#condContainer {
+    border: 1px solid black;
+    margin-top: 20px;
+
+}
+
 .cityLabel {
     font-weight: bold;
     display: flex;
@@ -119,9 +125,10 @@ body {
     display: flex;
     justify-content: center;
     background-color: #ffc374;
-    margin-top: 50px;
+    margin-top: 10px;
     border: 2px solid black;
     padding: 10px;
+    margin: 0;
 }
 
 .oth {
