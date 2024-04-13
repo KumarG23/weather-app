@@ -1,11 +1,20 @@
 body {
+    max-width: 50vh;
+    margin: auto;
     background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px; */
+    /* padding-right: 50px; */
     align-items: center;
     
     
 
+}
+
+.weatherApp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
 }
 
 .weatherForm {
@@ -13,6 +22,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     margin: 5px;
+    padding-bottom: 20px;
     
 }
 
@@ -20,32 +30,57 @@ body {
     background-color: #99d5ca;
 }
 
-h1 {
-    
+.mainContainer {
+    border: 1px dashed black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+   
 }
 
-p {
+.tempContainer {
+    border: 1px solid black;
+    margin-top: 20px;
 }
 
-.card {
+.cityContainer {
+    border: 1px solid black;
+ }
+
+ .condContainer {
+    border: 1px solid black;
+    margin-top: 20px;
+ }
+
+ .iconContainer {
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
+
+.card { 
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    border: none;
-    margin: auto;
+    border-radius: 0;
+    margin: 0;
+    border: 1px solid black;
+    flex-grow: 20;
     
 }
 
 .city {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     background-color: #ffc374;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 10px;
+    margin: 0;
 
 }
 
@@ -54,9 +89,10 @@ p {
     display: flex;
     justify-content: center;
     background-color: #ffc374;
-    margin-top: 20px;
-    border: 2px solid black;
-    padding: 10px
+    /* margin-top: 20px; */
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 0;
 }
 
 .temperature {
@@ -65,6 +101,7 @@ p {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    margin: 0;
     
     
 }
@@ -74,8 +111,8 @@ p {
     display: flex;
     justify-content: center;
     background-color: #ffc374;
-    margin-top: 50px;
-    border: 2px solid black;
+    margin: 0;
+    border: 1px solid black;
     padding: 10px;
 }
 
@@ -84,18 +121,20 @@ p {
     display: flex;
     justify-content: center;
     background-color: #ffc374;
-    margin-top: 50px;
-    border: 2px solid black;
+    /* margin-top: 50px; */
+    border: 1px solid black;
     padding: 10px;
+    margin: 0;
 }
 
 .condition {
-    border: black;
-    border-radius: 5px;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center
+    align-items: center;
+    margin: 0;
+    text-transform: capitalize;
 }
 
 
@@ -106,6 +145,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    border: 1px solid black;
     
 }
 
@@ -113,21 +154,26 @@ p {
 
 
 .tempDisplay, .tempFarDisplay, .tempCelDisplay {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
     border: black;
-    border-radius: 1px;
+    border: 1px solid black;
     font-weight: normal;
-    flex-direction: row;
-    margin-top: 5px;
+    /* flex-direction: row; */
+    padding: 5px 10px;
+    margin: 0;
    
 }
 
 
 .cityDisplay {
     font-weight: normal;
-    border: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 10px;
     
 }
 
@@ -142,10 +188,7 @@ p {
 }
 
 .tempFarDisplay {
-    border-right: 2px solid black;
-    padding-right: 50px;
-    border-left: 2px solid black;
-    padding-left: 50px;
+    flex-grow: 20;
 
 }
 
@@ -160,6 +203,14 @@ p {
     padding: 15px;
 }
 */
+
+.descDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+}
 
 .weatherEmoji {
     width: 50%;
